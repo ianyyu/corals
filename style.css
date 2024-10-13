@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color:  #F8F4EB;
+  }
+  
+  #scrolly-container {
+    display: flex;
+    position: relative;
+  }
+  
+  #graphic {
+    position: sticky;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+    background-color: #1e90ff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .step {
+    width: 60%;
+    margin: 50vh 0;
+    padding: 50px;
+    background-color: #F8F4EB;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 100rem;
+  }
+  
+  p {
+    font-size: 1.25rem;
+  }
+  
