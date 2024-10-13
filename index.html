@@ -4,30 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coral Chronicles</title>
-  <link rel="style" href="./style.css">
-  
-  <script src="/app.js"></script>
-  <script src="https://unpkg.com/scrollama"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="scrolly-container">
-    <div id="graphic">
-      <h1>Graphic Content</h1>
-    </div>
-    <div class="step" data-step="1">
-      <p>Step 1: Scroll down to reveal the next content.</p>
-    </div>
-    <div class="step" data-step="2">
-      <p>Step 2: Keep scrolling for more content.</p>
-    </div>
-    <div class="step" data-step="3">
-      <p>Step 3: Almost there!</p>
-    </div>
-    <div class="step" data-step="4">
-      <p>Step 4: You made it to the end!</p>
-    </div>
-  </div>
-  
 
+  <div class="container">
+    <!-- Section 1: Intro Scroll -->
+    <section id="intro-scroll" class="scroll-section">
+      <div class="intro-text">
+        <h5>By <b>Steph W & Ian Y</b></h5>
+        <h5>Data from Smithsonian Invertebrate Zoology Dept.</h5>
+        
+        <h6></br></br>Published on Oct 12 2024</h6>
+        <h1>CORAL </br>CHRONICLES</h1>
+        <h5>------------<h5>
+        <p>A visual journey through the vertical habitats of earth's </br> ocean architects</p>
+      </div>
+      <div class="intro-image">
+        <img src="./images/image1.png" alt="Coral Illustration"> <!-- Replace with the actual image -->
+      </div>
+    </section>
+
+    <!-- Section 2: Scroll 1 -->
+    <section id="scroll-1" class="scroll-section">
+      <div class="scroll-content">
+        <h2>What do we know about Corals?</h2>
+        <p>Coral reefs play an essential role in maintaining the health of our oceans and supporting humans...</p>
+        <p><em>Did you know that corals are the source of food for many ocean species?</em></p>
+      </div>
+      <div class="scroll-image">
+        <img src="./images/image2.png" alt="Coral Image"> <!-- Replace with actual coral image -->
+      </div>
+    </section>
+
+    <!-- Section 3: Geo Scroll -->
+    <section id="geo-scroll" class="scroll-section">
+      <div class="scroll-geo">
+        <img src="./images/image3.png" alt="Geo Ocean Depth"> <!-- Replace with actual geo depth image -->
+      </div>
+      <div class="geo-text">
+        <h2>Corals in Different Ocean Depths</h2>
+        <p>The ocean floor can be divided into three major zones: the shallow epipelagic zone, the mesophotic zone, and the benthic zone...</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
