@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Coral Chronicles</title>
+    <meta name="description" content="Coral Chronicles" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<div class="container">
+		<!-- Section 1: Intro Scroll -->
+		<section id="intro-scroll" class="scroll-section">
+		  <div class="intro-text">
+			<h5>By <b>Steph W & Ian Y</b></h5>
+			<h5>Data from Smithsonian Invertebrate Zoology Dept.</h5>
+			
+			<h6></br></br>Published on Oct 12 2024</h6>
+			<h1>CORAL </br>CHRONICLES</h1>
+			<hr class="solid-line"> <!-- Solid line instead of dashed -->
+			<p>A visual journey through the vertical habitats of earth's </br> ocean architects</p>
+		  </div>
+		  <div class="intro-image">
+			<img src="./images/hero.png" alt="Coral Illustration"> <!-- Replace with the actual image -->
+		  </div>
+		</section>
+
+		
+	
+		<section id="scroll-1" class="scroll">
+			<figure>
+				<h2 class="figure-title">What do we know about Corals?</h2>
+				<p class="sticky-paragraph">Coral reefs play an essential role in maintaining the health of our oceans and supporting human life. Coral reefs also protect coastlines from erosion and storm surges, acting as natural barriers. Moreover, they contribute to tourism and offer potential medicinal compounds. Their preservation is critical, as they are both a source of life and a shield for coastal communities.</p>
+				<p id="dynamic-text-1">This is some dynamic text that will change.</p>
+			</figure>
+			<article>
+				<div class="step" data-step="1">
+					<img src="images/scroll1.png" alt="Scroll 1" />
+				</div>
+				<div class="step" data-step="2">
+					<img src="images/scroll2.png" alt="Scroll 2" />
+				</div>
+				<div class="step" data-step="3">
+					<img src="images/scroll3.png" alt="Scroll 3" />
+				</div>
+			</article>
+		</section>
+
+        <!-- Existing Scrollytelling Section (renamed to scroll-2) -->
+        <section id="scroll-2" class="scroll">
+            <article>
+                <div class="step" data-step="1">
+                    <img src="images/geo1.png" alt="Geo 1" />
+                </div>
+                <div class="step" data-step="2">
+                    <img src="images/geo2.png" alt="Geo 2" />
+                </div>
+                <div class="step" data-step="3">
+                    <img src="images/geo3.png" alt="Geo 3" />
+                </div>
+                <div class="step" data-step="4">
+                    <img src="images/geo4.png" alt="Geo 4" />
+                </div>
+            </article>
+            <figure>
+                <h2 class="figure-title">Corals in Different Ocean Depths</h2>
+                <p id="dynamic-text-2">This is some dynamic text that will change.</p>
+            </figure>
+        </section>
+
+    <section id="outro"></section>
+    <script src="d3.v4.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="../build/scrollama.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

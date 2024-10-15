@@ -1,0 +1,372 @@
+
+	/* default / demo page */
+
+	body {
+		margin: 0;
+		font-family: 'Cormorant Garamond', serif;
+		background-color: #f5f1e8;
+		color: #333;
+	  }
+	  
+	  h1, h2, p {
+		margin: 0;
+	  }
+	  
+	  h1 {
+		font-style: italic;
+		font-size: 68px;
+		font-family: 'Cormorant Garamond', serif;
+		line-height: 100%;
+		margin-bottom: 0;
+	  }
+
+	   p{
+		font-size: 18px;
+		font-family: 'Cormorant Garamond', serif;
+		line-height: 100%;
+		margin: 0;
+	   }
+	  
+	  
+	  h5 {
+		font-size: 10pt;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-family: "Work Sans", sans-serif;
+		font-weight: 200;
+	  
+	  }
+	  
+	  h6 {
+		font-size: 10pt;
+		margin-top: 0;
+		padding-bottom: 350px;
+		font-family: "Work Sans", sans-serif;
+		font-weight: 200;
+	  }
+	  
+	  /* Container to Hold Sections */
+	  .container {
+		width: 80%;
+		margin: 0 auto;
+		padding: 20px 0;
+	  }
+
+	  .solid-line {
+		border: none; /* Remove default border */
+		width: 110px;
+		height: 1px; /* Set the height of the line */
+		background-color: #333; /* Set the color of the line */
+		margin: 1rem 0; /* Add some margin for spacing */
+	}
+	
+	.scroll {
+		position: relative;
+		border-top: 2px dashed #000;
+		border-bottom: 2px dashed #000;
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 2rem; /* Add space between scrollytelling sections */
+	}
+	
+	/* Update figure styles */
+	.scroll figure {
+		position: sticky;
+		width: 50%; /* Adjust width to allow space for steps */
+		top: 0;
+		right: 2rem;
+		transform: translate3d(0, 0, 0);
+	}
+	
+	/* Update article and step styles */
+	.scroll article {
+		width: 50%; /* Adjust width to match figure */
+		padding: 0 1rem;
+	}
+	
+	.scroll .step {
+		width: 100%; /* Full width within the article */
+		margin: 0 auto 2rem auto;
+		min-height: 80vh; /* Ensure steps are tall enough for scrolling effect */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	/* Style for the images within steps */
+	.scroll .step img {
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Update dynamic text styles */
+	#dynamic-text-1, #dynamic-text-2 {
+		font-size: 1rem;
+		line-height: 1.5;
+		text-align: center;
+		padding: 1rem;
+	}
+	
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.scroll {
+			flex-direction: column;
+		}
+	
+		.scroll figure, .scroll article {
+			width: 100%;
+		}
+	
+		.scroll figure {
+			position: relative;
+			right: 0;
+		}
+	}
+
+	/* ... (Keep all existing CSS rules) ... */
+
+/* Adjustments for scroll-1 */
+#scroll-1 figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#scroll-1 .figure-title {
+    margin-bottom: 1rem;
+}
+
+#scroll-1 .sticky-paragraph {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: left;
+    padding: 1rem;
+    background-color: rgba(245, 241, 232, 0.9); /* Slightly transparent background */
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    max-width: 80%;
+    position: sticky;
+    top: 20px; /* Adjust this value to control where the paragraph sticks */
+}
+
+#scroll-1 #dynamic-text-1 {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+	max-width: 80%;
+    padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #scroll-1 .sticky-paragraph {
+        position: static;
+        max-width: 100%;
+    }
+}
+
+#scroll-1 article {
+    width: 50%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center steps vertically */
+}
+
+#scroll-1 .step {
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Scroll Section Styling */
+.scroll-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 100vh; /* Full height scroll sections */
+	padding: 40px 0;
+  }
+  
+  /* Intro Section (First Scroll Section) */
+  #intro-scroll .intro-text {
+	flex: 1;
+	max-height: max-content;
+	margin-top: -10px;
+  }
+  
+  #intro-scroll .intro-text h1 {
+	font-size: 3.5rem;
+	margin-bottom: 1rem;
+  }
+  
+  #intro-scroll .intro-text p {
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+  }
+  
+  #intro-scroll .intro-image {
+	flex: 1;
+	text-align: right;
+  }
+  
+  #intro-scroll .intro-image img {
+width: 120%;
+	height: auto;
+  }
+	  * {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			margin: 0;
+			font-family: 'Cormorant Garamond', serif;
+			background-color: #f5f1e8;
+			color: #333;
+		  }
+
+		p,
+		h1,
+		h2,
+		h3,
+		h4,
+		a {
+			margin: 0;
+			font-weight: 300;
+		}
+
+		a,
+		a:visited,
+		a:hover {
+			color: #f30;
+			text-decoration: none;
+			border-bottom: 1px solid currentColor;
+		}
+
+		#intro {
+			max-width: 40rem;
+			margin: 1rem auto;
+			text-align: center;
+		}
+
+		.intro__overline {
+			font-size: 1.4rem;
+		}
+
+		.intro__hed {
+			font-size: 1.4rem;
+			margin: 1.5rem auto;
+			text-transform: uppercase;
+			font-weight: 900;
+			letter-spacing: 0.05em;
+		}
+
+		.intro__dek {
+			font-size: 1.4rem;
+		}
+
+		/* demo */
+
+		#intro {
+			margin-bottom: 320px;
+		}
+
+		#outro {
+			height: 1200px;
+		}
+
+		/* scrollama */
+
+		
+
+		#scroll {
+			position: relative;
+			border-top: 2px dashed #000;
+			border-bottom: 2px dashed #000;
+			display: flex; /* Changed from -webkit-box and -ms-flexbox */
+			flex-direction: row; /* Ensure content flows horizontally */
+		}
+
+		figure {
+			position: sticky;
+			width: 100%;
+			top: 0;
+			right: 2rem;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			/* background-color: #ddd;
+			border: 1px solid #000; */
+		}
+
+		#dynamic-text {
+			margin-left: 23rem; /* Space between the image and the text */
+			width: 60%; /* Ensure dynamic text occupies half the width */
+			text-align: center;
+		}
+
+		.figure-title {
+			font-family: 'Cormorant Garamond', serif; /* Make sure to include the font */
+			font-weight: bold;
+			text-align: center; /* Center the text */
+			position: relative;
+			margin: 1rem 0; /* Add some margin for spacing */
+		}
+		
+		
+
+		article p {
+			text-align: center;
+			padding: 1rem;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-moz-transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			font-size: 8rem;
+			font-weight: 900;
+			color: #666;
+		}
+
+		article {
+			position: relative;
+			padding: 0 1rem;
+			width: 30rem;
+		}
+
+		.step {
+			width: 80%; /* Set this to whatever width you want */
+			max-width: 40rem; /* Optional: limit max width */
+			margin: 0 auto 2rem auto; /* Center the step */
+		}
+		
+		.step:last-child {
+			border-bottom: 1px solid #333;
+		}
+
+		.step.is-active {
+			background-color: lightgoldenrodyellow;
+		}
+
+		.step p {
+			text-align: center;
+			padding: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.step img {
+			width: 100%; /* Make the image take the full width of the step */
+			height: auto; /* Maintain the aspect ratio */
+		}
+
+		
