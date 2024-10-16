@@ -1,49 +1,17 @@
 
-	/* default / demo page */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
 
-	body {
-		margin: 0;
-		font-family: 'Cormorant Garamond', serif;
-		background-color: #f5f1e8;
-		color: #333;
-	  }
-	  
-	  h1, h2, p {
-		margin: 0;
-	  }
-	  
-	  h1 {
-		font-style: italic;
-		font-size: 68px;
-		font-family: 'Cormorant Garamond', serif;
-		line-height: 100%;
-		margin-bottom: 0;
-	  }
-
-	   p{
-		font-size: 18px;
-		font-family: 'Cormorant Garamond', serif;
-		line-height: 100%;
-		margin: 0;
-	   }
-	  
-	  
-	  h5 {
-		font-size: 10pt;
-		margin-top: 0;
-		margin-bottom: 0;
-		font-family: "Work Sans", sans-serif;
-		font-weight: 200;
-	  
-	  }
-	  
-	  h6 {
-		font-size: 10pt;
-		margin-top: 0;
-		padding-bottom: 350px;
-		font-family: "Work Sans", sans-serif;
-		font-weight: 200;
-	  }
+        .solid-line {
+            border: none; /* Remove default border */
+            width: 110px;
+            height: 1px; /* Set the height of the line */
+            background-color: #333; /* Set the color of the line */
+            margin: 1rem 0; /* Add some margin for spacing */
+        }
 	  
 	  /* Container to Hold Sections */
 	  .container {
@@ -62,8 +30,6 @@
 	
 	.scroll {
 		position: relative;
-		border-top: 2px dashed #000;
-		border-bottom: 2px dashed #000;
 		display: flex;
 		flex-direction: row;
 		margin-bottom: 2rem; /* Add space between scrollytelling sections */
@@ -100,11 +66,28 @@
 	}
 	
 	/* Update dynamic text styles */
-	#dynamic-text-1, #dynamic-text-2 {
+	#dynamic-text-1 {
 		font-size: 1rem;
 		line-height: 1.5;
 		text-align: center;
-		padding: 1rem;
+		/* padding: 1rem; */
+	}
+
+	#dynamic-text-2 {
+		font-size: 1rem;
+		line-height: 1.5;
+		text-align: center;
+		max-width: 100%;
+		/* padding: 1rem; */
+	}
+
+	.figure-title {
+		font-family: 'Cormorant Garamond', serif; /* Make sure to include the font */
+		font-weight: bold;
+		text-align: center; /* Center the text */
+		position: relative;
+		margin: 1rem 0; /* Add some margin for spacing */
+		
 	}
 	
 	/* Responsive adjustments */
@@ -134,17 +117,18 @@
 
 #scroll-1 .figure-title {
     margin-bottom: 1rem;
+	text-align: left;
 }
 
 #scroll-1 .sticky-paragraph {
     font-size: 1rem;
     line-height: 1.4;
     text-align: left;
-    padding: 1rem;
+    /* padding: 1rem; */
     background-color: rgba(245, 241, 232, 0.9); /* Slightly transparent background */
     border-radius: 5px;
     margin-bottom: 1rem;
-    max-width: 80%;
+    max-width: 65%;
     position: sticky;
     top: 20px; /* Adjust this value to control where the paragraph sticks */
 }
@@ -153,8 +137,7 @@
     font-size: 1rem;
     line-height: 1.5;
     text-align: left;
-	max-width: 80%;
-    padding: 1rem;
+	max-width: 65%;
 }
 
 /* Responsive adjustments */
@@ -280,12 +263,6 @@ width: 120%;
 			margin-bottom: 320px;
 		}
 
-		#outro {
-			height: 1200px;
-		}
-
-		/* scrollama */
-
 		
 
 		#scroll {
@@ -314,13 +291,6 @@ width: 120%;
 			text-align: center;
 		}
 
-		.figure-title {
-			font-family: 'Cormorant Garamond', serif; /* Make sure to include the font */
-			font-weight: bold;
-			text-align: center; /* Center the text */
-			position: relative;
-			margin: 1rem 0; /* Add some margin for spacing */
-		}
 		
 		
 
@@ -367,6 +337,114 @@ width: 120%;
 		.step img {
 			width: 100%; /* Make the image take the full width of the step */
 			height: auto; /* Maintain the aspect ratio */
+		} */
+
+		#scroll-1 {
+			position: relative;
+			height: 100vh;
+		}
+		
+		#scroll-1 .fixed-viewport {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			flex-direction: row-reverse; /* This reverses the order of the flex items */
+			justify-content: flex-start;
+			align-items: center;
+			background-color: #f5f1e8;
+			z-index: 10;
+		}
+		
+		#scroll-1 .image-container {
+			width: 50%;
+			height: 100%;
+			position: relative;
+		}
+		
+		#scroll-1 .sticky-image {
+			position: absolute;
+			top: 50%;
+			left: 40%;
+			transform: translate(-50%, -50%);
+			max-width: 100%;
+			max-height: 100%;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+		}
+		
+		#scroll-1 .sticky-image.active {
+			opacity: 1;
+		}
+		
+		#scroll-1 .text-container {
+			width: 40%;
+			padding: 5px;
+			/* margin-left: 2rem; Add some margin between text and image */
+		}
+		
+		#scroll-1 .scroll-space {
+			height: 300vh;
+		}
+		
+		.sticky-paragraph {
+			margin-bottom: 2rem;
+			line-height: 1.6;
 		}
 
+		#scroll-2 {
+			position: relative;
+			height: 100vh;
+		}
 		
+		#scroll-2 .fixed-viewport {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #f5f1e8; /* Match your background color */
+			z-index: 10;
+		}
+		
+		#scroll-2 .image-container {
+			width: 50%;
+			height: 100%;
+			position: relative;
+		}
+		
+		#scroll-2 .sticky-image {
+			position: absolute;
+			margin-left: 90px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-width: 100%;
+			max-height: 100%;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+		}
+		
+		#scroll-2 .sticky-image.active {
+			opacity: 1;
+		}
+		
+		#scroll-2 .text-container {
+			width: 30%;
+			padding: 20px;
+			
+		}
+		
+		#scroll-2 .scroll-space {
+			height: 300vh; /* Increased to allow for all 4 images */
+		}
+		
+		/* Add padding to the bottom of the page */
+		body {
+			padding-bottom: 200vh;
+		}

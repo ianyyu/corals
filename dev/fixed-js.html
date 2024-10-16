@@ -32,53 +32,47 @@
 		  </div>
 		</section>
 
-		
-	
 		<section id="scroll-1" class="scroll">
-			<figure>
-				<h2 class="figure-title">What do we know about Corals?</h2>
-				<p class="sticky-paragraph">Coral reefs play an essential role in maintaining the health of our oceans and supporting human life. Coral reefs also protect coastlines from erosion and storm surges, acting as natural barriers. Moreover, they contribute to tourism and offer potential medicinal compounds. Their preservation is critical, as they are both a source of life and a shield for coastal communities.</p>
-				<p id="dynamic-text-1">This is some dynamic text that will change.</p>
-			</figure>
-			<article>
-				<div class="step" data-step="1">
-					<img src="images/scroll1.png" alt="Scroll 1" />
+			<div class="fixed-viewport">
+				<div class="image-container">
+					<img src="images/scroll1.png" alt="Coral 1" class="sticky-image active" data-step="1" />
+					<img src="images/scroll2.png" alt="Coral 2" class="sticky-image" data-step="2" />
+					<img src="images/scroll3.png" alt="Coral 3" class="sticky-image" data-step="3" />
 				</div>
-				<div class="step" data-step="2">
-					<img src="images/scroll2.png" alt="Scroll 2" />
+				<div class="text-container">
+					<h2 class="figure-title">What do we know about Corals?</h2>
+					<p class="sticky-paragraph">
+						Coral reefs play an essential role in maintaining the health of our oceans and supporting human life. 
+						Coral reefs also protect coastlines from erosion and storm surges, acting as natural barriers. 
+						Moreover, they contribute to tourism and offer potential medicinal compounds. 
+						Their preservation is critical, as they are both a source of life and a shield for coastal communities.
+					</p>
+					<p id="dynamic-text-1"></p>
 				</div>
-				<div class="step" data-step="3">
-					<img src="images/scroll3.png" alt="Scroll 3" />
-				</div>
-			</article>
+			</div>
+			<div class="scroll-space"></div>
 		</section>
 
+		
         <!-- Existing Scrollytelling Section (renamed to scroll-2) -->
-        <section id="scroll-2" class="scroll">
-            <article>
-                <div class="step" data-step="1">
-                    <img src="images/geo1.png" alt="Geo 1" />
-                </div>
-                <div class="step" data-step="2">
-                    <img src="images/geo2.png" alt="Geo 2" />
-                </div>
-                <div class="step" data-step="3">
-                    <img src="images/geo3.png" alt="Geo 3" />
-                </div>
-                <div class="step" data-step="4">
-                    <img src="images/geo4.png" alt="Geo 4" />
-                </div>
-            </article>
-            <figure>
-                <h2 class="figure-title">Corals in Different Ocean Depths</h2>
-                <p id="dynamic-text-2">This is some dynamic text that will change.</p>
-            </figure>
-        </section>
-
+		<section id="scroll-2" class="scroll">
+			<div class="fixed-viewport">
+				<div class="image-container">
+					<img src="images/geo1.png" alt="Geo 1" class="sticky-image active" data-step="1" />
+					<img src="images/geo2.png" alt="Geo 2" class="sticky-image" data-step="2" />
+					<img src="images/geo3.png" alt="Geo 3" class="sticky-image" data-step="3" />
+					<img src="images/geo4.png" alt="Geo 4" class="sticky-image" data-step="4" />
+				</div>
+				<div class="text-container">
+					<h2 class="figure-title">Corals in Different Ocean Depths</h2>
+					<p id="dynamic-text-2"></p>
+				</div>
+			</div>
+			<div class="scroll-space"></div>
+		</section>
+		
     <section id="outro"></section>
     <script src="d3.v4.min.js"></script>
-    <script src="https://unpkg.com/intersection-observer"></script>
-    <script src="../build/scrollama.js"></script>
     <script src="script.js"></script>
 </body>
 
