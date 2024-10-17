@@ -71,3 +71,32 @@ function updateScroll2() {
 window.addEventListener('scroll', updateScroll2);
 window.addEventListener('resize', updateScroll2);
 updateScroll2(); // Initial call to set correct state
+
+
+// Update this in your JavaScript file
+// Add this to your JavaScript file after your existing scroll handlers
+const scroll3 = document.querySelector('#scroll-3');
+const carouselTrack = scroll3.querySelector('.carousel-track');
+const slides = scroll3.querySelectorAll('.carousel-slide');
+const slideCount = slides.length;
+
+function updateScroll3() {
+    const scrollStart = scroll3.offsetTop;
+    const scrollEnd = scrollStart + scroll3.querySelector('.scroll-space').offsetHeight - window.innerHeight;
+    const scrollPosition = window.pageYOffset;
+
+    if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
+        const progress = (scrollPosition - scrollStart) / (scrollEnd - scrollStart);
+        const slideIndex = Math.min(Math.floor(progress * slideCount), slideCount - 1);
+        const translateX = -(slideIndex * 100);
+        
+        carouselTrack.style.transform = `translateX(${translateX}%)`;
+        scroll3.querySelector('.fixed-viewport').style.visibility = 'visible';
+    } else {
+        scroll3.querySelector('.fixed-viewport').style.visibility = 'hidden';
+    }
+}
+
+window.addEventListener('scroll', updateScroll3);
+window.addEventListener('resize', updateScroll3);
+updateScroll3(); // Initial call to set correct state
