@@ -597,6 +597,55 @@
     height: 150vh;
 }
 
+#scroll-4 #snappers,
+#scroll-4 #groupers,
+#scroll-4 #crabs {
+    position: absolute;
+    opacity: 0; /* Start invisible */
+    transition: opacity 1s ease; /* Smooth fade-in */
+}
+
+#scroll-4 #snappers {
+    right: 450px;
+    top: 140px;
+    width: 200px;
+}
+
+#scroll-4 #groupers {
+    right: 1300px;
+    top: 200px;
+    width: 230px;
+}
+
+#scroll-4 #crabs {
+    right: 1500px;
+    top: 650px;
+    width: 127px;
+}
+
+/* Static images (visible at all times) */
+#scroll-4 #shrimp,
+#scroll-4 #rockfish {
+    position: absolute;
+    opacity: 1;  /* Always visible */
+}
+
+#scroll-4 #rockfish {
+    right: 50px;
+    top: 460px;
+    width: 456px;
+}
+
+#scroll-4 #shrimp {
+    right: 1300px;
+    top: 500px;
+    width: 156px;
+}
+
+/* Class to make images visible */
+#scroll-4 .visible img {
+    opacity: 1; /* Fully visible */
+}
 #scroll-5 {
     position: relative;
     height: 100vh;

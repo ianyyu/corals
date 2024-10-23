@@ -129,14 +129,33 @@ function updateScroll4() {
     const scrollEnd = scroll4.offsetTop + document.getElementById("scroll-4").getBoundingClientRect().height;
     const scrollPosition = window.pageYOffset;
 
+    const snappersImage = document.querySelector('#snappers');
+    const groupersImage = document.querySelector('#groupers');
+    const crabsImage = document.querySelector('#crabs');
+
     if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
         const progress = (scrollPosition - scrollStart) / (scrollEnd - scrollStart);
         const index = Math.min(Math.floor(progress * content4.length), content4.length - 1);
 
         dynamicTitle4.textContent = content4[index].title;
         dynamicText4.textContent = content4[index].text;
-        
+
         scroll4.querySelector('.fixed-viewport').style.visibility = 'visible';
+
+        // Image fade-in/out logic for sections
+        if (index === 0) {  // "Threats to Coral Reefs"
+            snappersImage.style.opacity = '0';   // Fade out "snappers.png"
+            groupersImage.style.opacity = '0';   // Fade out "groupers.png"
+            crabsImage.style.opacity = '0';      // Fade out "crabs.png"
+        } else if (index === 1) {  // "How You Can Help"
+            snappersImage.style.opacity = '1';   // Fade in "snappers.png"
+            groupersImage.style.opacity = '0';   // Keep "groupers.png" hidden
+            crabsImage.style.opacity = '0';      // Keep "crabs.png" hidden
+        } else if (index === 2) {  // "The Smithsonian's Scientific Treasure"
+            snappersImage.style.opacity = '1';   // Keep "snappers.png" visible
+            groupersImage.style.opacity = '1';   // Fade in "groupers.png"
+            crabsImage.style.opacity = '1';      // Fade in "crabs.png"
+        }
     } else {
         scroll4.querySelector('.fixed-viewport').style.visibility = 'hidden';
     }
@@ -144,7 +163,10 @@ function updateScroll4() {
 
 window.addEventListener('scroll', updateScroll4);
 window.addEventListener('resize', updateScroll4);
-updateScroll4(); // Initial call to set correct state
+updateScroll4(); // Initial call to set the correct state
+
+
+
 
 
 // Add this with your other scroll handlers
