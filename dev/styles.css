@@ -174,11 +174,36 @@
 	padding: 40px 0;
   }
   
+/* Global Styles */
+* {
+	box-sizing: border-box;
+  }
+  
+  html,
+  body {
+	margin: 0;
+	padding: 0;
+  }
+  
+  body {
+	font-family: 'Cormorant Garamond', serif;
+	background-color: #f5f1e8;
+	color: #333;
+  }
+  
   /* Intro Section (First Scroll Section) */
+  #intro-scroll {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+  }
+  
   #intro-scroll .intro-text {
 	flex: 1;
 	max-height: max-content;
 	margin-top: -10px;
+	width: 500px; /* Adjusted width to allow space for the image */
   }
   
   #intro-scroll .intro-text h1 {
@@ -197,37 +222,17 @@
   }
   
   #intro-scroll .intro-image img {
-width: 120%;
+	width: 100%; /* Adjusted image width for better fit */
 	height: auto;
   }
-	  * {
-			box-sizing: border-box;
-		}
-
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-		}
-
-		body {
-			margin: 0;
-			font-family: 'Cormorant Garamond', serif;
-			background-color: #f5f1e8;
-			color: #333;
-		  }
-
-
-		
-		
-		a,
-		a:visited,
-		a:hover {
-			color: #f30;
-			text-decoration: none;
-			border-bottom: 1px solid currentColor;
-		}
-
+  
+  /* Link Styles */
+  a {
+	color: #f30;
+	text-decoration: none;
+	border-bottom: 1px solid currentColor;
+  }
+  
 		#intro {
 			max-width: 40rem;
 			margin: 1rem auto;
@@ -328,7 +333,7 @@ width: 120%;
 		}
 
 		.step img {
-			width: 100%; /* Make the image take the full width of the step */
+			width: 980px; /* Make the image take the full width of the step */
 			height: auto; /* Maintain the aspect ratio */
 		} */
 
@@ -398,12 +403,13 @@ width: 120%;
 			left: 0;
 			width: 100%;
 			height: 100vh;
-			display: flex;
-			justify-content: space-between;
+			display: flex; /* Keep this to maintain flex properties */
+			justify-content: center; /* Center the content */
 			align-items: center;
 			background-color: #f5f1e8; /* Match your background color */
 			z-index: 10;
 		}
+		
 		
 		#scroll-2 .image-container {
 			width: 50%;
@@ -413,7 +419,7 @@ width: 120%;
 		
 		#scroll-2 .sticky-image {
 			position: absolute;
-			margin-left: 90px;
+			margin-left: -30px;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
@@ -485,6 +491,7 @@ width: 120%;
     justify-content: center;
     align-items: center;
     padding: 2rem;
+	padding-bottom: 20px;
 }
 
 .carousel-slide img {
@@ -533,4 +540,185 @@ width: 120%;
 
 #scroll-3 .scroll-space {
     height: 170vh;
+}
+
+#scroll-4 {
+    position: relative;
+    height: 100vh;
+}
+
+#scroll-4 .fixed-viewport {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f1e8;
+    z-index: 10;
+}
+
+#scroll-4 .text-container {
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#scroll-4 #dynamic-title-4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    transition: opacity 0.5s ease;
+}
+
+#scroll-4 #dynamic-text-4 {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Cormorant Garamond', serif;
+    transition: opacity 0.5s ease;
+}
+
+#scroll-4 .bottom-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+	width: 480px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+#scroll-4 .scroll-space {
+    height: 150vh;
+}
+
+#scroll-5 {
+    position: relative;
+    height: 100vh;
+}
+
+#scroll-5 .fixed-viewport {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f1e8;
+    visibility: hidden; /* Hidden by default */
+}
+
+#scroll-5 .image-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicking through to text */
+}
+
+#scroll-5 .positioned-image {
+    position: absolute;
+}
+
+/* Example positioning classes - adjust values to match your Figma design */
+.kelp-bottom-left {
+    top: 200px;
+    left: -150px;
+    width: auto; /* Width of the element */
+    height: 700px; /* Height if needed */
+	opacity: 0.4;
+}
+
+.coral-bottom-right1 {
+    top: 500px;
+    left: 1300px;
+    width: auto; /* Width of the element */
+    height: 500px; /* Height if needed */
+	opacity: 0.4;
+}
+
+.coral-bottom-right2 {
+    top: 700px;
+    left: 1250px;
+    width: auto; /* Width of the element */
+    height: 250px; /* Height if needed */
+	opacity: 0.4;
+}
+
+.coral-middle {
+    top: 770px;
+    left: 870px;
+    width: auto; /* Width of the element */
+    height: 200px; /* Height if needed */
+	opacity: 0.4;
+}
+
+.bubble-top{
+    top: 200px;
+    left: 595px;
+    width: auto; /* Adjust size as needed */
+	height: 67px;
+}
+.bubble-bottom {
+    top: 550px;
+    left: 1150px;
+    width: auto; /* Adjust size as needed */
+	height: 67px;
+}
+
+#scroll-5 .text-container {
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#scroll-5 .figure-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+#scroll-5 .static-text {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 410px; /* Optional: Set a max width */
+    margin: 0 auto; /* Centers the text block */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+#scroll-5 .scroll-space {
+    height: 100vh;
+}
+
+.end-title1 {
+	font-family: 'Cormorant Garamond', serif; /* Make sure to include the font */
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center; /* Center the text */
+	position: relative;
+	margin: 1rem 0; /* Add some margin for spacing */
+	font-style: italic; /* Make the h4 italic */
+	
+}
+
+.end-title2 {
+	font-family: 'Cormorant Garamond', serif; /* Make sure to include the font */
+font-weight: bold;
+	font-size: 16px;
+	text-align: center; /* Center the text */
+	position: relative;
+	margin: 1rem 0; /* Add some margin for spacing */	
 }

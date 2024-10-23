@@ -1,3 +1,6 @@
+
+
+
 const scroll1 = document.querySelector('#scroll-1');
 const scroll1Images = scroll1.querySelectorAll('.sticky-image');
 const dynamicText1 = document.querySelector('#dynamic-text-1');
@@ -10,7 +13,7 @@ const scroll1Texts = [
 
 function updateScroll1() {
     const scrollStart = scroll1.offsetTop;
-    const scrollEnd = scrollStart + scroll1.querySelector('.scroll-space').offsetHeight - window.innerHeight;
+    const scrollEnd = scroll1.offsetTop + document.getElementById("scroll-1").getBoundingClientRect().height;
     const scrollPosition = window.pageYOffset;
 
     if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
@@ -40,7 +43,7 @@ const images = scroll2.querySelectorAll('.sticky-image');
 const dynamicText2 = document.querySelector('#dynamic-text-2');
 
 const texts = [
-    "The ocean floor can be divided into three major zones: the shallow continental shelf, which corresponds to the epipelagic zone, the deeper mesophotic zone along the continental slope, and the vast abyssal and hadalpelagic zones of the deep ocean floor.",
+    "The ocean floor can be divided into three major zones: the shallow continental shelf, which corresponds to the epipelagic zone, the deeper mesopelagic zone along the continental slope, and the vast abyssal and hadalpelagic zones of the deep ocean floor.",
     "Corals, vital to marine ecosystems, are found throughout the world's oceans, thriving in both shallow tropical waters and deeper, darker environments",
     "Reef-building corals thrive only in shallow tropical and subtropical waters. This is because the algae in their tissues need sunlight for photosynthesis, and these corals prefer water temperatures between 70-85°F (22-29°C).",
     "In contrast, deep-sea corals thrive in cold, dark waters at depths of up to 20,000 feet (6,000 m). Unlike their shallow-water counterparts, deep-sea corals don't rely on sunlight or warm water, as they lack algae. Though they grow slowly, these corals can be found on underwater peaks called seamounts. Scientists have discovered over 3,300 species of deep-sea corals, nearly as many as shallow-water species, and the number continues to grow."
@@ -48,7 +51,7 @@ const texts = [
 
 function updateScroll2() {
     const scrollStart = scroll2.offsetTop;
-    const scrollEnd = scrollStart + scroll2.querySelector('.scroll-space').offsetHeight - window.innerHeight;
+    const scrollEnd = scroll2.offsetTop + document.getElementById("scroll-2").getBoundingClientRect().height;
     const scrollPosition = window.pageYOffset;
 
     if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
@@ -82,7 +85,7 @@ const slideCount = slides.length;
 
 function updateScroll3() {
     const scrollStart = scroll3.offsetTop;
-    const scrollEnd = scrollStart + scroll3.querySelector('.scroll-space').offsetHeight - window.innerHeight;
+    const scrollEnd = scroll3.offsetTop + document.getElementById("scroll-3").getBoundingClientRect().height;
     const scrollPosition = window.pageYOffset;
 
     if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
@@ -100,3 +103,100 @@ function updateScroll3() {
 window.addEventListener('scroll', updateScroll3);
 window.addEventListener('resize', updateScroll3);
 updateScroll3(); // Initial call to set correct state
+
+// Add this to your JavaScript file after the existing scroll handlers
+const scroll4 = document.querySelector('#scroll-4');
+const dynamicTitle4 = document.querySelector('#dynamic-title-4');
+const dynamicText4 = document.querySelector('#dynamic-text-4');
+
+const content4 = [
+    {
+        title: "Threats to Coral Reefs",
+        text: "Coral reefs face numerous threats, primarily from rising ocean acidification caused by increased CO2 levels, which hinders coral growth and can dissolve existing structures. Global warming, overfishing, physical damage from boats and divers, invasive species like lion fish, and harmful chemicals in sunscreen further endanger these delicate ecosystems. "
+    },
+    {
+        title: "How You Can Help",
+        text: "To help protect coral reefs, individuals can reduce their carbon footprint, support sustainable fishing practices, practice responsible diving and boating, use reef-safe sunscreen, advocate for marine protected areas, and educate others about coral reef conservation. "
+    },
+    {
+        title: "The Smithsonian's Scientific Treasure",
+        text: "The Smithsonian's National Museum of Natural History houses one of the world's largest and best-documented coral collections, featuring specimens from the historic U.S. South Seas Exploring Expedition of 1838-1842. This collection, which includes about 4,820 coral species with 65% from deep waters, serves as a crucial scientific resource for understanding and preserving these biodiversity-rich habitats that play a critical ecological role and hold valuable historical climate data."
+    }
+];
+
+function updateScroll4() {
+    const scrollStart = scroll4.offsetTop;
+    const scrollEnd = scroll4.offsetTop + document.getElementById("scroll-4").getBoundingClientRect().height;
+    const scrollPosition = window.pageYOffset;
+
+    if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
+        const progress = (scrollPosition - scrollStart) / (scrollEnd - scrollStart);
+        const index = Math.min(Math.floor(progress * content4.length), content4.length - 1);
+
+        dynamicTitle4.textContent = content4[index].title;
+        dynamicText4.textContent = content4[index].text;
+        
+        scroll4.querySelector('.fixed-viewport').style.visibility = 'visible';
+    } else {
+        scroll4.querySelector('.fixed-viewport').style.visibility = 'hidden';
+    }
+}
+
+window.addEventListener('scroll', updateScroll4);
+window.addEventListener('resize', updateScroll4);
+updateScroll4(); // Initial call to set correct state
+
+
+// Add this with your other scroll handlers
+const scroll5 = document.querySelector('#scroll-5');
+
+function updateScroll5() {
+    const scrollStart = scroll5.offsetTop;
+    const scrollEnd = scroll5.offsetTop + scroll5.getBoundingClientRect().height;
+    const scrollPosition = window.pageYOffset;
+
+    if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
+        scroll5.querySelector('.fixed-viewport').style.visibility = 'visible';
+    } else {
+        scroll5.querySelector('.fixed-viewport').style.visibility = 'hidden';
+    }
+}
+
+window.addEventListener('scroll', updateScroll5);
+window.addEventListener('resize', updateScroll5);
+updateScroll5(); // Initial call to set correct state
+
+
+function createLoadingBar() {
+    const loadingBar = document.createElement('div');
+    loadingBar.id = 'loading-bar';
+    document.body.appendChild(loadingBar);
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        #loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 8px;
+            background-color: #2C2627;
+            z-index: 100;
+        }
+    `;
+    document.head.appendChild(style);
+
+    window.addEventListener('scroll', updateLoadingBar);
+    window.addEventListener('resize', updateLoadingBar);
+    updateLoadingBar(); // Initial call to set correct state
+}
+
+function updateLoadingBar() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('loading-bar').style.width = scrolled + '%';
+}
+
+// Call the function to create the loading bar
+createLoadingBar();
