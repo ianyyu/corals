@@ -354,6 +354,8 @@
 			align-items: center;
 			background-color: #f5f1e8;
 			z-index: 10;
+			transform: translateY(-50px); /* Shift everything up by 50px */
+
 		}
 		
 		#scroll-1 .image-container {
@@ -450,9 +452,136 @@
 
 		/* Update these styles in your CSS */
 /* Add these styles to your CSS */
-
-
 #scroll-3 {
+    position: relative;
+    height: 100vh;
+}
+
+#scroll-3 .fixed-viewport {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f1e8;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding-top: 0; /* Remove extra padding at the top */
+    margin-top: 0; /* Ensure no margin pushing it down */
+}
+
+.carousel-container {
+    position: relative;
+    width: 406px; /* Matching Figma width */
+    height: 406px; /* Matching Figma height */
+    margin-top: 40px; /* Matching Figma y position */
+}
+
+.grid-background {
+    position: absolute;
+    width: 450px; /* Matching Figma width */
+    height: 128px; /* Matching Figma height */
+    left: 50%; /* Center the grid */
+    transform: translateX(-50%); /* Center the grid */
+    top: 340px; /* Position below the carousel image: 575px - 153px = 422px */
+    z-index: 1;
+}
+
+.grid-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.3s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-slide {
+    min-width: 406px; /* Matching Figma width */
+    height: 406px; /* Matching Figma height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;;
+}
+
+.text-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.text-track {
+    display: flex;
+    transition: transform 0.3s ease-out;
+}
+
+.slide-text {
+    min-width: 100%;
+    text-align: center;
+    /* padding: 2rem; */
+    transition: opacity 0.3s ease-out;
+	padding-top:3%;
+}
+
+/* Keep your existing text styles */
+.slide-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.slide-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.slide-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: normal;
+    /* margin-bottom: 1rem; */
+    /* line-height: 1.6; */
+    /* padding-bottom: 20px; */
+	max-width: 35%; /* Set a max-width to control text width */
+    margin: 0 auto;  /* Center the text horizontally */
+}
+
+#scroll-3 .scroll-space {
+    height: 300vh;
+}
+
+/* #scroll-3 {
     position: relative;
     height: 100vh;
 }
@@ -514,6 +643,14 @@
     margin-bottom: 0; /* Adjust margin for spacing */
 }
 
+.carousel-container h3 {
+    font-family: 'Cormorant Garamond', serif; /* Keep the desired font */
+    font-size: 32px; /* Set h3 to 32px */
+    font-weight: bold; /* Make the h3 bold */
+margin-top: 0px;
+	text-align: center;
+}
+
 .slide-text h4 {
     font-family: 'Cormorant Garamond', serif; /* Keep the desired font */
     font-size: 14px; /* Set h4 to 14px */
@@ -539,8 +676,8 @@
 }
 
 #scroll-3 .scroll-space {
-    height: 170vh;
-}
+    height: 90vh;
+} */
 
 #scroll-4 {
     position: relative;

@@ -41,12 +41,20 @@ updateScroll1(); // Initial call to set correct state
 const scroll2 = document.querySelector('#scroll-2');
 const images = scroll2.querySelectorAll('.sticky-image');
 const dynamicText2 = document.querySelector('#dynamic-text-2');
+const dynamicTitle2 = document.querySelector('#dynamic-title-2');  // Get the title element
 
 const texts = [
     "The ocean floor can be divided into three major zones: the shallow continental shelf, which corresponds to the epipelagic zone, the deeper mesopelagic zone along the continental slope, and the vast abyssal and hadalpelagic zones of the deep ocean floor.",
     "Corals, vital to marine ecosystems, are found throughout the world's oceans, thriving in both shallow tropical waters and deeper, darker environments",
     "Reef-building corals thrive only in shallow tropical and subtropical waters. This is because the algae in their tissues need sunlight for photosynthesis, and these corals prefer water temperatures between 70-85°F (22-29°C).",
     "In contrast, deep-sea corals thrive in cold, dark waters at depths of up to 20,000 feet (6,000 m). Unlike their shallow-water counterparts, deep-sea corals don't rely on sunlight or warm water, as they lack algae. Though they grow slowly, these corals can be found on underwater peaks called seamounts. Scientists have discovered over 3,300 species of deep-sea corals, nearly as many as shallow-water species, and the number continues to grow."
+];
+
+const titles = [
+    "Corals in different ocean depths  ",
+    "Corals in different ocean depths  ",
+    "Corals in the Epipelagic Zone",
+    "Corals in the Bathypelagic Zone"
 ];
 
 function updateScroll2() {
@@ -58,13 +66,16 @@ function updateScroll2() {
         const progress = (scrollPosition - scrollStart) / (scrollEnd - scrollStart);
         const index = Math.min(Math.floor(progress * images.length), images.length - 1);
 
+        // Toggle active images
         images.forEach((img, i) => {
             img.classList.toggle('active', i === index);
         });
 
+        // Update the text and title dynamically
         dynamicText2.textContent = texts[index];
-        dynamicText2.style.opacity = 1;
+        dynamicTitle2.textContent = titles[index];
 
+        dynamicText2.style.opacity = 1;
         scroll2.querySelector('.fixed-viewport').style.visibility = 'visible';
     } else {
         scroll2.querySelector('.fixed-viewport').style.visibility = 'hidden';
@@ -75,25 +86,66 @@ window.addEventListener('scroll', updateScroll2);
 window.addEventListener('resize', updateScroll2);
 updateScroll2(); // Initial call to set correct state
 
-
-// Update this in your JavaScript file
-// Add this to your JavaScript file after your existing scroll handlers
 const scroll3 = document.querySelector('#scroll-3');
 const carouselTrack = scroll3.querySelector('.carousel-track');
+const textTrack = scroll3.querySelector('.text-track');
 const slides = scroll3.querySelectorAll('.carousel-slide');
 const slideCount = slides.length;
 
 function updateScroll3() {
     const scrollStart = scroll3.offsetTop;
-    const scrollEnd = scroll3.offsetTop + document.getElementById("scroll-3").getBoundingClientRect().height;
+    const scrollEnd = scroll3.offsetTop + scroll3.querySelector('.scroll-space').offsetHeight;
     const scrollPosition = window.pageYOffset;
-
+    
     if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
-        const progress = (scrollPosition - scrollStart) / (scrollEnd - scrollStart);
+        const progress = Math.min((scrollPosition - scrollStart) / (scrollEnd - scrollStart), 0.999);
         const slideIndex = Math.min(Math.floor(progress * slideCount), slideCount - 1);
-        const translateX = -(slideIndex * 100);
+        const slideProgress = (progress * slideCount) % 1;
         
+        // Base translateX for the track
+        const translateX = -(slideIndex * 100);
         carouselTrack.style.transform = `translateX(${translateX}%)`;
+        textTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Update each slide
+        slides.forEach((slide, index) => {
+            const img = slide.querySelector('img');
+            const text = textTrack.children[index];
+            
+            // Calculate how many positions this slide is behind the current slide
+            const positionsBehind = slideIndex - index;
+            
+            if (index === slideIndex) {
+                // Current slide
+                img.style.opacity = '1';
+                img.style.transform = 'translateX(0)';
+                text.style.opacity = '1';
+            } else if (index === slideIndex + 1) {
+                // Next slide (sliding in)
+                const peakOpacity = Math.max(0, slideProgress);
+                img.style.opacity = `${peakOpacity * 0.5}`;
+                img.style.transform = 'translateX(0)';
+                text.style.opacity = '0';
+            } else if (positionsBehind === 1) {
+                // Previous slide (sliding out)
+                const exitOpacity = Math.max(0, 1 - slideProgress);
+                img.style.opacity = `${exitOpacity * 0.3}`;
+                img.style.transform = `translateX(-${slideProgress * 50}px)`;
+                text.style.opacity = '0';
+            } else if (positionsBehind === 2) {
+                // Two slides behind (fading out completely)
+                const exitOpacity = Math.max(0, 0.3 - slideProgress);
+                img.style.opacity = `${exitOpacity}`;
+                img.style.transform = 'translateX(-50px)';
+                text.style.opacity = '0';
+            } else {
+                // Other slides
+                img.style.opacity = '0';
+                img.style.transform = 'translateX(-50px)';
+                text.style.opacity = '0';
+            }
+        });
+        
         scroll3.querySelector('.fixed-viewport').style.visibility = 'visible';
     } else {
         scroll3.querySelector('.fixed-viewport').style.visibility = 'hidden';
@@ -102,7 +154,7 @@ function updateScroll3() {
 
 window.addEventListener('scroll', updateScroll3);
 window.addEventListener('resize', updateScroll3);
-updateScroll3(); // Initial call to set correct state
+updateScroll3(); // Initial call
 
 // Add this to your JavaScript file after the existing scroll handlers
 const scroll4 = document.querySelector('#scroll-4');
