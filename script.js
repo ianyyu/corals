@@ -6,9 +6,9 @@ const scroll1Images = scroll1.querySelectorAll('.sticky-image');
 const dynamicText1 = document.querySelector('#dynamic-text-1');
 
 const scroll1Texts = [
-    "Did you know that Corals are about 1/4 of all ocean species depending on reefs for food and shelter",
-    "Did you know that Corals are estimated valued at 30 billion t0 172 billion U.S. dollars each year, providing food, protection of shorelines, jobs based on tourism, and even medicines",
-    "Did you know corals are aiding cancer research? Scientists discovered that 2 sponges from deep-sea coral ecosystems contain compounds with anti-inflammatory, anti-viral, and potent anti-tumor properties. These chemicals prevent the division and spread of lung and breast cancer cells."
+    "about 1/4 of all ocean species depending on reefs for food and shelter",
+    "estimated valued at 30 billion t0 172 billion U.S. dollars each year, providing food, protection of shorelines, jobs based on tourism, and even medicines",
+    "aiding cancer research? Scientists discovered that 2 sponges from deep-sea coral ecosystems contain compounds with anti-inflammatory, anti-viral, and potent anti-tumor properties. These chemicals prevent the division and spread of lung and breast cancer cells."
 ];
 
 function updateScroll1() {
@@ -24,8 +24,7 @@ function updateScroll1() {
             img.classList.toggle('active', i === index);
         });
 
-        dynamicText1.textContent = scroll1Texts[index];
-        dynamicText1.style.opacity = 1;
+        dynamicText1.innerHTML = `<mark style="background-color: #2C2627; color: #F8F4EB; border-radius: 3px; font-style: italic;">${scroll1Texts[index]}</mark>`;   dynamicText1.style.opacity = 1;
 
         scroll1.querySelector('.fixed-viewport').style.visibility = 'visible';
     } else {
