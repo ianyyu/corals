@@ -461,7 +461,7 @@
 /* Add these styles to your CSS */
 #scroll-3 {
     position: relative;
-    height: 100vh;
+    height: 80vh;
 }
 
 #scroll-3 .fixed-viewport {
@@ -527,6 +527,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+	margin-top: 10%;
 }
 
 .carousel-slide img {
