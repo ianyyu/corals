@@ -447,7 +447,7 @@
 		
 		/* Add padding to the bottom of the page */
 		body {
-			padding-bottom: 200vh;
+			padding-bottom: 0;
 		}
 
 		/* Update these styles in your CSS */
