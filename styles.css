@@ -1,16 +1,4 @@
 
-	h5, h6 {
-		font-family: 'Work Sans', sans-serif;
-		font-weight: 200;
-		font-size: 10px;
-		margin: 0%;
-	}
-
-
-
-
-
-	  
 	  /* Container to Hold Sections */
 	  .container {
 		width: 80%;
@@ -103,6 +91,13 @@
 			position: relative;
 			right: 0;
 		}
+	}
+
+	h5, h6 {
+		font-family: 'Work Sans', sans-serif;
+		font-weight: 200;
+		font-size: 10px;
+		margin: 0%;
 	}
 
 	/* ... (Keep all existing CSS rules) ... */
@@ -683,6 +678,10 @@
     height: 90vh;
 } */
 
+
+
+
+/* Scroll 4 section */
 #scroll-4 {
     position: relative;
     height: 100vh;
@@ -702,11 +701,15 @@
 }
 
 #scroll-4 .text-container {
-    width: 60%;
-    padding: 20px;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+	width: 60%;
+	padding: 20px;
+	text-align: center;
+	max-width: 560px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 #scroll-4 #dynamic-title-4 {
@@ -714,7 +717,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
-	max-width: 80%;
+	
     transition: opacity 0.5s ease;
 }
 
@@ -722,7 +725,7 @@
     font-size: 0.9rem;
     line-height: 1.5;
     font-family: 'Cormorant Garamond', serif;
-	max-width: 80%;
+	
     transition: opacity 0.5s ease;
 	margin: 0;
 }
